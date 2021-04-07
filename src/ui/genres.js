@@ -1,10 +1,12 @@
+import "../css/genres.css";
 const ShowGenres = (genres) => {
-    const genresList = document.querySelector('.genres');
-    genres.forEach(genre => {
-        const html = `
-            <span class="genre" data-id="${genre.id}">${genre.name}</span>
+  const genresList = document.querySelector(".genres");
+
+  genres.forEach((genre) => {
+    const html = `
+            <span class="genre" data-id="${genre.id}"> <i class="fas fa-angle-right genre-icon"></i> ${genre.name}</span>
         `;
-        genresList.innerHTML += html;
-    });
-}
+    genresList.innerHTML += html;
+  });
+};
 export default ShowGenres;

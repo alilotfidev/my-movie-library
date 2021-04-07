@@ -1,0 +1,45 @@
+.genres{
+    min-width: 300px;
+    padding: 16px;
+    position: relative;
+    margin-top: 2vh;
+}
+.genres h5, .genre{
+    padding: 8px;
+    margin-left: 2vw;
+    font-size: 12px;
+    font-weight: 500;
+}
+.genres h5{
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+.genre{
+    display: block;
+    color: var(--primary-light-color);
+    margin-top: 1vh;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 24px;
+}
+.genre:hover{
+    border: 2px solid var(--primary-light-color);
+
+}
+.genre.active{
+    color: var(--primary-color);
+    border: 2px solid var(--primary-light-color);
+    border-color: var(--primary-color);
+}
+.genre-icon{
+    margin-right: 10px;
+}
+.genres::after{
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 3vh;
+    right: 0;
+    background-color: var(--primary-lighter-color);
+}
