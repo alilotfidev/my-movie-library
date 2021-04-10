@@ -4,6 +4,10 @@
     position: relative;
     margin-top: 2vh;
 }
+.genres-container{
+    position: sticky;
+    top: 0;
+}
 .genres h5, .genre{
     padding: 8px;
     margin-left: 2vw;

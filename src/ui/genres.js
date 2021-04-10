@@ -1,6 +1,6 @@
 import "../css/genres.css";
 const ShowGenres = (genres) => {
-  const genresList = document.querySelector(".genres");
+  const genresList = document.querySelector(".genres-container");
 
   genres.forEach((genre) => {
     const html = `
