@@ -1,6 +1,10 @@
+.movies{
+  position: relative;
+}
 .movies-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: auto;
   margin-top: 3vh;
 }
@@ -75,4 +79,39 @@
 .next-page:hover, .previous-page:hover{
   color: white;
   background-color: var(--primary-color);
+}
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.loader .dot{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin: 0 4px;
+  animation: loading 1.2s infinite ease-in-out;
+}
+.loader .dot-1{
+  animation-delay: -0.24s;
+}
+.loader .dot-2{
+  animation-delay: -0.12s;
+}
+.loader .dot-3{
+  animation-delay: 0s;
+}
+@keyframes loading{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(8px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }

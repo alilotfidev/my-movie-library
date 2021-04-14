@@ -4,10 +4,12 @@ class MoviesUI {
   constructor() {}
   showMovies(movies) {
     const data = movies.results;
+    console.log(data);
     const moviesContainer = document.querySelector(".movies-container");
-    moviesContainer.innerHTML = '';
+    moviesContainer.innerHTML = "";
     data.forEach((movie) => {
-      const html = `
+      if (!movie.adult) {
+        const html = `
         <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w342/${movie.poster_path}" alt="">
                     <p>${movie.original_title}</p>
@@ -16,9 +18,10 @@ class MoviesUI {
                     </div>
         </div>
     `;
-      moviesContainer.innerHTML += html;
-      window.scrollTo(0,0);
-    });    
+        moviesContainer.innerHTML += html;
+        window.scrollTo(0, 0);
+      }
+    });
   }
   //   let page = movies.page;
 }
