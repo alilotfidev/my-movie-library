@@ -16,7 +16,7 @@ class getMovies{
         return result;
     }
     async getMovieDetails(id){
-        const query = `movie/${id}?api_key=${this.apiKey}`;
+        const query = `movie/${id}?api_key=${this.apiKey}&append_to_response=videos`;
         const response = await fetch(this.baseUrl + query);
         const result = await response.json();
         return result;

@@ -7,6 +7,7 @@ import getMovies from "./api/getMovies";
 //show items
 import GenresUI from "./ui/genres";
 import MoviesUI from "./ui/movies";
+import showPopup from './ui/movie-popup';
 
 //class instances
 const movies = new getMovies();
@@ -16,6 +17,7 @@ const genresUI = new GenresUI();
 //elements
 const searchForm = document.querySelector(".search");
 const loader = document.querySelector(".loader");
+const moviesContainer = document.querySelector('.movies-container');
 //navigation buttons
 const nextPageButton = document.querySelector(".next-page");
 const previousPageButton = document.querySelector(".previous-page");
@@ -110,6 +112,14 @@ searchForm.addEventListener("submit", (e) => {
     });
   }
 });
-movies.getMovieDetails(544401).then((data) => {
-  console.log(data);
-});
+
+
+//show movie details popup
+moviesContainer.addEventListener('click', e => {
+  if(e.target.closest('.movie-card')){
+    const id = e.target.closest('.movie-card').getAttribute('data-id');
+    movies.getMovieDetails(id).then((data) => {
+      showPopup(data);
+    });
+  }
+})
