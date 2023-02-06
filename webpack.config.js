@@ -8,7 +8,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
-    publicPath: "/assets/",
+    publicPath: "/assets/"
   },
   module: {
     rules: [
