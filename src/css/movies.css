@@ -142,6 +142,7 @@
   overflow: auto;
   position: relative;
   background-color: white;
+  border-radius: 8px;
 }
 .active-popup{
   transform: scale(1);
@@ -209,4 +210,55 @@
 .movie-details-popup .button:nth-child(2),
 .movie-details-popup .button:nth-child(3){
   margin-left: 8px;
+}
+
+
+@media screen and (max-width: 800px){
+  .popup-container{
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .movie-details-popup .image {
+    width: auto;
+  }
+  .movie-details-popup .details{
+    width: 100%;
+  }
+  .movie-details-popup .details h2, .movie-details-popup .details .tag-line{
+    text-align: center;
+  }
+  .movie-details-popup .details h2 {
+    font-size: 24px;
+  }
+  .movie-details-popup .details .more-details{
+    font-size: 12px;
+  }
+  .movie-details-popup .overview-text,
+.movie-details-popup .genres-text{
+  font-size: 14px;
+}
+.movie-details-popup.active-popup .details  h4{
+  font-size: 16px;
+}
+
+}
+@media screen and (max-width: 600px){
+  .movie-details-popup .button{
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 16px;
+    margin-top: 1em;
+  }
+  .movies .movies-container .movie-card .details{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .movie-card p{
+    font-size: 12px;
+  }
+  .movies .movies-container .movie-card .details{
+    font-size: 12px;
+  }
 }
